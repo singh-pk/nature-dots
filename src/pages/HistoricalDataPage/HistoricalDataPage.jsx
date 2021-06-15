@@ -28,6 +28,8 @@ const HistoricalDataPage = ({ match, history, parametersById }) => {
 
   useEffect(() => {
     data();
+
+    // eslint-disable-next-line
   }, []);
 
   const data = async () => {
