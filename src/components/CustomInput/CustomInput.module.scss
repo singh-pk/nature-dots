@@ -1,7 +1,9 @@
+@import '../../main';
+
 .wrapper {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: $btn-top;
+  left: $btn-side;
   z-index: 10;
 
   transition: all 0.3s linear;
@@ -13,8 +15,9 @@
 }
 
 .select {
-  height: 2.5rem;
+  height: $btn-height;
   width: 20rem;
   font-size: 1.1rem;
   outline: none;
+  cursor: pointer;
 }

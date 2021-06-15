@@ -1,7 +1,11 @@
-import React from 'react';
+import customButtonStyles from './CustomButton.module.scss';
 
-const CustomButton = ({ children }) => {
-  return <button>{children}</button>;
+const CustomButton = ({ handleClick, children }) => {
+  return (
+    <button className={customButtonStyles.customButton} onClick={handleClick}>
+      {children}
+    </button>
+  );
 };
 
 export default CustomButton;

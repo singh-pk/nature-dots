@@ -1,3 +1,18 @@
 $background-color: #dfdfdf;
 
-$header-background: rgb(113, 100, 255);
+$primary-color: #fff;
+
+$spinner-background: rgb(113, 100, 255);
+
+$btn-height: 2.5rem;
+$btn-top: 1rem;
+$btn-side: 1rem;
+$border-radius: 2rem;
+
+@mixin pageStyles() {
+  width: 100%;
+  height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}

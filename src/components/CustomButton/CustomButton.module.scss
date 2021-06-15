@@ -1,0 +1,24 @@
+@import '../../main';
+
+.customButton {
+  position: absolute;
+  top: $btn-top;
+  right: $btn-side;
+  border-radius: $border-radius;
+  outline: none;
+  border: none;
+  padding: 0 1rem;
+  height: $btn-height;
+  font-size: 1.1rem;
+  background-color: #ff8042;
+  color: $primary-color;
+  font-weight: 700;
+  transform: scale(1);
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

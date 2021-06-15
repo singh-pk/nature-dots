@@ -1,50 +1,32 @@
-import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import {
-  selectStations,
-  selectParametersByStationId,
-} from '../../redux/location/locationSelector';
-import { setCurrentStationId } from '../../redux/location/locationAction';
+import useMatchId from '../../hooks/useMatchId';
 
 import PieChartSvg from '../../components/PieChartSvg/PieChartSvg';
+import CustomButton from '../../components/CustomButton/CustomButton';
+
+import { selectParametersByStationId } from '../../redux/location/locationSelector';
 
 import currentValuePageStyles from './CurrentValuePage.module.scss';
 
-const CurrentValuePage = ({
-  match,
-  setCurrentStationId,
-  stations,
-  history,
-  parametersById,
-}) => {
-  useEffect(() => {
-    const { id } = match.params;
+const CurrentValuePage = ({ match, history, parametersById }) => {
+  useMatchId(match.params.id);
 
-    if (stations[id]) {
-      setCurrentStationId(id);
-    } else {
-      setCurrentStationId('');
-      history.push('/page-not-found');
-    }
-
-    // eslint-disable-next-line
-  }, [match.params.id]);
+  const handleClick = () => {
+    history.push(`/${match.params.id}/historical-data`);
+  };
 
   return (
     <div className={currentValuePageStyles.currentValuePage}>
-      <PieChartSvg parametersById={parametersById} />
+      <CustomButton handleClick={handleClick}>Historical Data</CustomButton>
+
+      <PieChartSvg parametersById={parametersById || []} />
     </div>
   );
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  stations: selectStations(state),
   parametersById: selectParametersByStationId(ownProps.match.params.id)(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentStationId: id => dispatch(setCurrentStationId(id)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(CurrentValuePage);
+export default connect(mapStateToProps)(CurrentValuePage);
