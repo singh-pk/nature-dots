@@ -27,6 +27,8 @@ const CurrentValuePage = ({
       setCurrentStationId('');
       history.push('/page-not-found');
     }
+
+    // eslint-disable-next-line
   }, [match.params.id]);
 
   return (

@@ -22,6 +22,8 @@ const HistoricalDataPageWithSpinner = WithSpinner(HistoricalDataPage);
 const App = ({ stations, fetchStationsStart }) => {
   useEffect(() => {
     fetchStationsStart();
+
+    // eslint-disable-next-line
   }, []);
 
   let isFetching = !Object.keys(stations).length;
