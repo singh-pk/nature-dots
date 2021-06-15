@@ -16,7 +16,8 @@ const PieChartSvg = ({ parametersById }) => {
     props.payload.parameter,
   ];
 
-  const formatLegend = (_, entry) => entry.payload.parameter;
+  const formatLegend = (_, { payload }) =>
+    `${payload.parameter} (${payload.unit})`;
 
   return (
     <PieChart width={400} height={400}>
