@@ -1,0 +1,32 @@
+@import '../../main';
+
+.spinnerContainer {
+  display: grid;
+  place-items: center;
+  height: 30vw;
+
+  .spinner:before {
+    content: '';
+    display: grid;
+    width: 100%;
+    place-items: center;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    border: 0.2rem solid transparent;
+    border-top-color: $header-background;
+    animation: spinner 0.7s linear infinite;
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .spinner-container {
+    height: calc(100vh - 5rem - 11.9225rem);
+  }
+}
