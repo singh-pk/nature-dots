@@ -32,4 +32,4 @@ Live Demo - [Nature Dots Assignment Demo](https://nature-dots.web.app)
 
 1. transformData - Transforms array data to object
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- **Note: this is a one-way operation. Once you `eject`, you can’t go back!** -->
